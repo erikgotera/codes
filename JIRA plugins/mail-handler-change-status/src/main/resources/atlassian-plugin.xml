@@ -1,0 +1,28 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="mail-handler-change-status"/>
+
+    <!-- add our web resources -->
+    <web-resource key="project-indicators-resources" name="project-indicators Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="project-indicators.css" location="/css/project-indicators.css"/>
+        <resource type="download" name="project-indicators.js" location="/js/project-indicators.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>project-indicators</context>
+    </web-resource>
+    
+    <message-handler i18n-name-key="saluthandler.name" key="salutHandler" 
+        class="es.in2.salut.jira.mailhandlerchangestatus.SalutHandler" 
+        add-edit-url="/secure/admin/EditHandlerDetailsUsingParams!default.jspa" weight="0"/>
+    
+    <component key="issue-key-validator" class="es.in2.salut.jira.mailhandlerchangestatus.IssueKeyValidator"/>
+    
+</atlassian-plugin>

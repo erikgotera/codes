@@ -1,0 +1,90 @@
+
+<div class="module">
+
+#if( $enBD )
+	
+	<div class="mod-header"> 
+	  <h3>$i18n.getText("estado.projecto")</h3> 
+	</div> 
+	<div class="mod-content"> 
+	  <ul class="item-details"> 
+	    <li>$estado</li> 
+	  </ul> 
+	</div>
+	
+	<div class="mod-header">
+	  <h3>$i18n.getText("indicador.economico")</h3> 
+	</div> 
+	<div class="mod-content">
+	  <table class="versionBanner" width="100%" style="padding-left:0px;">
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("importe")</th>
+			<td width="70%">$importe €</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("ingreso")</th>
+			<td width="70%">$ingresos €</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("coste")</th>
+			<td width="70%">$coste €</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("margen.euros")</th>
+			<td width="70%">$margen €</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("margen.porcentaje")</th>
+			<td width="70%">$margen_por %</td>
+		  </tr>
+	  </table> 
+	</div>
+	
+	<div class="mod-header">
+	  <h3>$i18n.getText("indicador.esfuerzo")</h3> 
+	</div> 
+	<div class="mod-content">
+	  <table class="versionBanner" width="100%" style="padding-left:0px;">
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("h.estimadas")</th>
+			<td width="70%">$estimadas h</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("h.reales")</th>
+			<td width="70%">$reales h</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("margen.esfuerzo")</th>
+			<td width="70%">$diferencia h</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("desviamiento")</th>
+			<td width="70%">$desviament %</td>
+		  </tr>
+	  </table>  
+	</div>
+	
+	<div class="mod-header">
+	  <h3>$i18n.getText("indicador.entrega")</h3> 
+	</div> 
+	<div class="mod-content">
+	  <table class="versionBanner" width="100%" style="padding-left:0px;">
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("fecha.prevista")</th>
+			<td width="70%">$fecha_entrega_prevista</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("fecha.real")</th>
+			<td width="70%">$fecha_entrega_real</td>
+		  </tr>
+		  <tr>
+		  	<td width="2%"></td><th width="28%">$i18n.getText("diferencia")</th>
+			<td width="70%">$dif_plazo</td>
+		  </tr>
+		  
+	  </table>   
+	</div>
+#else
+	<b><i>$i18n.getText("no.indicadores")</i></b>
+#end
+</div>

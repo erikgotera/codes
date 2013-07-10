@@ -1,0 +1,30 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="rest_user_rol_plugin"/>
+    
+    <rest key="IsUserInRole" path="/in2rest" version="1.0">
+    	<description>Checks if the user is in a specific role.</description>
+	</rest>
+	
+    
+    <!-- add our web resources -->
+    <web-resource key="rest_user_rol_plugin-resources" name="rest_user_rol_plugin Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="rest_user_rol_plugin.css" location="/css/rest_user_rol_plugin.css"/>
+        <resource type="download" name="rest_user_rol_plugin.js" location="/js/rest_user_rol_plugin.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>rest_user_rol_plugin</context>
+    </web-resource>
+
+    
+</atlassian-plugin>

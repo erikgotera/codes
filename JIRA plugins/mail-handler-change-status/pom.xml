@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>es.in2.salut</groupId>
+    <artifactId>mail-handler-change-status</artifactId>
+    <version>1.0</version>
+
+    <organization>
+        <name>IN2</name>
+        <url>http://www.in2.es/</url>
+    </organization>
+
+    <developers>
+		<developer>
+			<name>Erik Gotera</name>
+			<email>erik.gotera@in2.es</email>
+		</developer>
+	</developers>
+    
+    <name>Mail Handler Change Status</name>
+    <description>This plugin changes the status and add some custom field of a specific issue from mail</description>
+    <packaging>atlassian-plugin</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-api</artifactId>
+            <version>${jira.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- JIRA mail dependencies -->
+  <!--       <dependency>
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-mail-plugin</artifactId>
+            <version>${jira.version}</version>
+            <scope>provided</scope>
+        </dependency> -->
+        <dependency>
+            <groupId>com.atlassian.mail</groupId>
+            <artifactId>atlassian-mail</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.4</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Add dependency on jira-core if you want access to JIRA implementation classes as well as the sanctioned API. -->
+        <!-- This is not normally recommended, but may be required eg when migrating a plugin originally developed against JIRA 4.x -->
+        
+        <dependency>
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-core</artifactId>
+            <version>${jira.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2-atlassian-1</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-jira-plugin</artifactId>
+                <version>${amps.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <productVersion>${jira.version}</productVersion>
+                    <productDataVersion>${jira.version}</productDataVersion>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <jira.version>5.2.11</jira.version>
+        <amps.version>4.2.0</amps.version>
+    </properties>
+
+</project>
