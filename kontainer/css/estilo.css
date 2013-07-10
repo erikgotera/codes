@@ -1,0 +1,192 @@
+/*
+Hoja de estilo para el proyecto de PHP
+estilo.css
+Realizado por Gabriel Martires y Erik Gotera
+*/
+
+html, body{
+	margin:3%;
+	padding:0;
+	background: #787878 url(../images/img01.jpg) repeat left top;
+}
+
+
+body{
+	margin-left : auto;
+	margin-right : auto;
+	font-family: Verdana, Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	text-align:center;
+	width:900px;
+}
+
+p{
+	margin:0 10px 10px;
+}
+
+a {
+	text-decoration: none;
+	color:#00FF00;
+}
+
+a:hover {
+	border-bottom: none;
+	text-decoration:underline;
+}
+
+a img {
+	border: none;
+}
+
+/* Cabecera */
+
+div#header h1{
+	height:80px;;
+	line-height:80px;
+	margin:0;
+	padding-left:10px;
+	background: #787878;
+	color: #79B30B;
+}
+
+
+
+
+/* Contenido */
+
+/*FONDO VERDE*/
+div.top {
+	height:28px; 
+	background-image:url(../images/top_line.gif); 
+	background-repeat: repeat-x; 
+	margin:2em 0 0 0;}
+	
+img.esquina_sup_izq { float:left; }
+img.esquina_sup_der { float:right; }
+
+div.content { 
+	background-image:url(../images/left_line.jpg); 
+	background-repeat:repeat-y; 
+	background-color: #a9d974;
+	width:900px;
+	}
+	
+div.boxcontrol { 
+	padding:0 5% 0 5%; 
+	background-image:url(../images/right_line.jpg); 
+	background-position:right; 
+	background-repeat:repeat-y; 
+	overflow:auto;
+	}
+	
+div.bottom { 
+	height:28px; 
+	background-image:url(../images/btm_line.gif); 
+	background-repeat:repeat-x; 
+	border:0;
+	padding:0;
+	margin:0;}
+	
+img.esquina_inf_izq { float:left; }
+img.esquina_inf_der { float:right; }
+
+	
+/* IE 5.5 box model hack para posicionar correctamente las imagenes de esquina */
+* html img.esquina_sup_izq, * html img.esquina_inf_izq  { \margin-left:-.2em;  \margin-left:0; }
+* html img.esquina_inf_der, * html img.esquina_sup_der { \margin-left:.2em; } 
+
+/*FIN FONDO VERDE*/
+
+/*div#container{
+	text-align:left;
+	background: #787878;
+	width:900px;
+	margin:0 auto;
+}*/
+
+div#content p{
+	line-height:1.4;
+}
+
+
+div#footer{
+	background: #333;
+	color: #FFF;
+	clear:both;
+	width:100%;
+}
+
+div#footer p{
+	margin:0;
+	padding:5px 10px;
+}
+
+
+div#contenido{
+	margin-left:20%;
+	padding:20px;
+	text-align:left;
+}
+
+
+div#tituloproyecto
+{
+font-size:17px;
+}
+
+div#textocontenido a
+{
+	color:#666666;
+}
+
+div#textocontenido a:hover
+{
+	color:#666666;
+}
+
+
+div#navigation{
+	font-size:12px;
+	font-weight:bold;
+	background-color:#666666;
+	float:left;
+	width:20%;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+}
+
+div#navigation img{
+	vertical-align:middle;
+}
+
+
+/* Tabla Listado Mensajes*/
+table#tab_mens{
+	border-width:1px;
+	border-spacing:0px; 
+	border-style:dashed;
+	border-collapse:collapse;
+	border:none;
+}
+
+table#tab_mens td{
+	/*width:100px;*/
+	border-width:1px;
+	border-style:dashed;
+	padding:10px;
+	border-color:#000000;
+	border-bottom:none;
+	border-top:none;
+}
+
+tr#cabecera{
+	background-color:#666666;
+	font-weight:bold;
+	color:#00FF00;	
+}
+
+/*Fin Tabla Listado Mensajes*/
+
+textarea#textnew{
+	width:90%;
+}
