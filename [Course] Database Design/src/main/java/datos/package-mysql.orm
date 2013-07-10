@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE orm SYSTEM "file:/javax/jdo/orm.dtd">
+<orm>
+    <package name="datos">
+        <class name="Body_parts" table="BODY_PARTS">
+            <field name="tag" persistence-modifier="persistent">
+                <column name="TAG" length="15" jdbc-type="VARCHAR"/>
+            </field>
+            <field name="tagCol" persistence-modifier="persistent" mapped-by="body_part">
+                <collection element-type="Records"/>
+            </field>
+            <field name="name">
+                <column name="BODYPARTS_NAME" length="45" jdbc-type="VARCHAR"/>
+            </field>
+        </class>
+
+        <class name="Activities" table="ACTIVITIES">
+            <field name="id">
+                <column jdbc-type="INT"/>
+            </field>
+            <field name="name">
+                <column name="activities_name" length="45" jdbc-type="VARCHAR"/>
+            </field>
+            <field name="idCol" persistence-modifier="persistent" mapped-by="activity">
+            </field>
+        </class>
+
+        <class name="Records" table="RECORDS">
+            <field name="id_record" value-strategy="increment" column="ID">
+                <column jdbc-type="INT"/>
+            </field>
+            <field name="sequence_name">
+                <column length="3" jdbc-type="VARCHAR"/>
+            </field>
+            <field name="body_part" persistence-modifier="persistent">
+                <column name="BODYPART"/>
+            </field>
+            <field name="timestamp">
+                <column jdbc-type="LONG"/>
+            </field>
+            <field name="date">
+                <column length="23" jdbc-type="VARCHAR"/>
+            </field>
+            <field name="coord_x">
+                <column jdbc-type="DOUBLE"/>
+            </field>
+            <field name="coord_y">
+                <column jdbc-type="DOUBLE"/>
+            </field>
+            <field name="coord_z">
+                <column jdbc-type="DOUBLE"/>
+            </field>
+            <field name="activity" persistence-modifier="persistent">
+                <column jdbc-type="INT"/>
+            </field>
+        </class>
+    </package>
+</orm>
